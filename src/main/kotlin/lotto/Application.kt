@@ -10,14 +10,13 @@ import lotto.ui.ResultView
 fun main() {
     val inputView = InputView()
     val resultView = ResultView()
-    val amount = inputView.getMoney()
 
+    val amount = inputView.getMoney()
     val lottoCount = amount / 1000
     val lottoMaker = LottoMaker()
+
     val tickets = List(lottoCount) { lottoMaker.makeLotto() }
     val lottoTicket = LottoTicket(tickets)
-
-    println("${lottoTicket.size()}개를 구매했습니다.")
     resultView.printTickets(lottoTicket.getTickets())
 
     val winningLotto = Lotto(inputView.getWinningNumbers())

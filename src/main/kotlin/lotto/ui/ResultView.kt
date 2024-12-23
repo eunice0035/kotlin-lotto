@@ -4,6 +4,7 @@ import lotto.domain.Lotto
 
 class ResultView {
     fun printTickets(tickets: List<Lotto>) {
+        println("${tickets.size}개를 구매했습니다.")
         tickets.forEach { println(it.numbers) }
     }
 
