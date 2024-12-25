@@ -7,8 +7,8 @@ class LottoCalculator {
             .eachCount()
     }
 
-    fun calculateProfit(results: Map<Int, Int>): Double {
-        val totalPrize = results.entries.sumOf { (match, count) ->
+    fun calculateProfit(lottoResult: LottoResult): Double {
+        val totalPrize = lottoResult.getResults().entries.sumOf { (match, count) ->
             when (match) {
                 3 -> 5000 * count
                 4 -> 50000 * count
